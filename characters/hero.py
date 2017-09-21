@@ -1,24 +1,21 @@
 #hero character
 
 from characters.base import Character
+import time
 import random
 
 class Hero(Character):
-    def __init__ (self, name, health = 20, power = 4, coins = 5):
-        super().__init__(name)
-        self.health = health
-        self.power = power
-        self.coins = coins
-        super().alive()
+    def __init__(self):
+        self.name = 'hero'
+        self.health = 10
+        self.power = 5
+        self.coins = 20
 
-    def print_status(self):
-        super().print_status()
+    def restore(self):
+        self.health = 10
+        print("Hero's heath is restored to {}!".format(self.health))
+        time.sleep(1)
 
-    def attack(self, enemy):
-        prob = random.randint(1, 10)
-        if prob == 1:
-            enemy.health -= (self.power * 2)
-            print('You did {} damage.'.format(self.power * 2))
-        else:
-            enemy.health -= self.power
-            print('You did {} damage.'.format(self.power))
+    def buy(self, item):
+        self.coins -= item.cost
+        item.apply(self)

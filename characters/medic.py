@@ -20,5 +20,6 @@ class Medic(Character):
         prob = random.randint(1, 5)
         if prob == 1:
             self.health += 2
+            print('You gained 2 health.')
         else:
-            pass
+            print('You did not gain health.')
