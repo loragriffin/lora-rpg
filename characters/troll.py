@@ -1,10 +1,10 @@
-#medic character
+#shadow character
 
 from characters.base import Character
 import random
 
-class Medic(Character):
-    def __init__ (self, name, health = 15, power = 2):
+class Troll(Character):
+    def __init__ (self, name, health = 10, power = 2):
         super().__init__(name)
         self.health = health
         self.power = power
@@ -16,10 +16,9 @@ class Medic(Character):
     def print_status(self):
         super().print_status()
 
-    def heal(self):
+    def block(self, enemy):
         prob = random.randint(1, 5)
-        if prob == 1:
-            self.health += 2
-            print('You gained 2 health.')
-        else:
-            print('You did not gain health.')
+        return prob
+
+    def bounty(enemy):
+        enemy.coins += 5

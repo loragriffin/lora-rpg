@@ -1,8 +1,8 @@
 #battle
 from characters.base import Character
-from characters.goblin import Goblin
-from characters.hero import Hero
+# from characters.womping_willow import Womping_willow
 from characters.wizard import Wizard
+# from characters.voldemort import Voldemort
 # from store import *
 # from sword import *
 # from tonic import *
@@ -10,12 +10,12 @@ import time
 import random
 
 class Battle(object):
-    def do_battle(self, hero, enemy):
+    def do_battle(self, wizard, enemy):
         print("=====================")
-        print("Hero faces the {}".format(enemy.name))
+        print("{} faces the {}".format(wizard.name, enemy.name))
         print("=====================")
-        while hero.alive() and enemy.alive():
-            hero.print_status()
+        while wizard.alive() and enemy.alive():
+            wizard.print_status()
             enemy.print_status()
             time.sleep(1.5)
             print("-----------------------")
@@ -26,7 +26,7 @@ class Battle(object):
             print("> ", end=' ')
             keyinput = int(input())
             if keyinput == 1:
-                hero.attack(enemy)
+                wizard.attack(enemy)
             elif keyinput == 2:
                 pass
             elif keyinput == 3:
@@ -35,10 +35,10 @@ class Battle(object):
             else:
                 print("Invalid input {}".format(input))
                 continue
-            enemy.attack(hero)
-        if hero.alive():
+            enemy.attack(wizard)
+        if wizard.alive():
             print("You defeated the {}".format(enemy.name))
             return True
         else:
-            print("YOU LOSE!")
+            print("You lost the battle!")
             return False

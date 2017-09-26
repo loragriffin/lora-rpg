@@ -1,16 +1,16 @@
 from characters.base import Character
-from characters.goblin import Goblin
-from characters.hero import Hero
-from characters.wizard import Wizard
+# from characters.womping_willow import Womping_willow
+# from characters.voldemort import Voldemort
+# from characters.wizard import Wizard
 # from battle import *
 # from store import *
 # from sword import *
 import time
 import random
 
-class Tonic(object):
+class Elixir(object):
     cost = 5
-    name = 'tonic'
+    name = 'elixir'
     def apply(self, character):
         character.health += 2
         print("{}'s health increased to {}.".format(character.name, character.health))

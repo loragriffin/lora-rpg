@@ -9,8 +9,8 @@ from characters.base import Character
 # import time
 # import random
 
-class Goblin(Character):
+class Womping_willow(Character):
     def __init__(self):
-        self.name = 'goblin'
+        self.name = 'Womping Willow'
         self.health = 6
         self.power = 2

@@ -1,10 +1,10 @@
 from characters.base import Character
-from characters.goblin import Goblin
-from characters.hero import Hero
+from characters.womping_willow import Womping_willow
+from characters.voldemort import Voldemort
 from characters.wizard import Wizard
 from battle import *
-from sword import *
-from tonic import *
+from wand import *
+from elixir import *
 import time
 import random
 
@@ -12,13 +12,13 @@ class Store(object):
     # If you define a variable in the scope of a class:
     # This is a class variable and you can access it like
     # Store.items => [Tonic, Sword]
-    items = [Tonic, Sword]
-    def do_shopping(self, hero):
+    items = [Elixir, Wand]
+    def do_shopping(self, wizard):
         while True:
             print("=====================")
             print("Welcome to the store!")
             print("=====================")
-            print("You have {} coins.".format(hero.coins))
+            print("You have {} coins.".format(wizard.coins))
             print("What do you want to do?")
             for i in range(len(Store.items)):
                 item = Store.items[i]
@@ -30,4 +30,4 @@ class Store(object):
             else:
                 ItemToBuy = Store.items[answer - 1]
                 item = ItemToBuy()
-                hero.buy(item)
+                wizard.buy(item)
