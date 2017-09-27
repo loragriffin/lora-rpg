@@ -1,4 +1,4 @@
-#battle
+# battle
 from characters.base import Character
 # from characters.womping_willow import Womping_willow
 from characters.wizard import Wizard
@@ -8,6 +8,7 @@ from characters.wizard import Wizard
 # from tonic import *
 import time
 import random
+
 
 class Battle(object):
     def do_battle(self, wizard, enemy):

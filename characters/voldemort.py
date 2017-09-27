@@ -1,4 +1,4 @@
-#wizard character
+# wizard character
 from characters.base import Character
 # from characters.goblin import Goblin
 # from characters.hero import Hero
@@ -6,8 +6,9 @@ from characters.base import Character
 # from store import *
 # from sword import *
 # from tonic import *
-import time
+# import time
 import random
+
 
 class Voldemort(Character):
     def __init__(self):
