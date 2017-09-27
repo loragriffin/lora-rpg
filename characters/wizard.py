@@ -19,3 +19,12 @@ class Wizard(Character):
     def buy(self, item):
         self.coins -= item.cost
         item.apply(self)
+
+    def attack(self, enemy):
+        damagex2 = random.randint(1, 10) > 9
+        if damagex2:
+            print("{} gets double damage during attack!".format(self.name))
+            self.power = self.power * 2
+        super(Wizard, self).attack(enemy)
+        if damagex2:
+            self.power = self.power / 2

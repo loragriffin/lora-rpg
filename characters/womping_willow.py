@@ -11,6 +11,6 @@ from characters.base import Character
 
 class Womping_willow(Character):
     def __init__(self):
-        self.name = 'Womping Willow'
+        self.name = 'the Womping Willow'
         self.health = 6
         self.power = 2

@@ -17,7 +17,7 @@ class Voldemort(Character):
 
     def attack(self, enemy):
         swap_power = random.random() > 0.5
-        if swap_power:
+        if swap_power and self.health > 0:
             print("{} swaps power with {} during attack!".format(self.name, enemy.name))
             self.power, enemy.power = enemy.power, self.power
         super(Voldemort, self).attack(enemy)

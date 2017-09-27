@@ -12,7 +12,7 @@ import random
 class Battle(object):
     def do_battle(self, wizard, enemy):
         print("=====================")
-        print("{} faces the {}".format(wizard.name, enemy.name))
+        print("{} faces {}".format(wizard.name, enemy.name))
         print("=====================")
         while wizard.alive() and enemy.alive():
             wizard.print_status()
@@ -23,7 +23,7 @@ class Battle(object):
             print("1. fight {}".format(enemy.name))
             print("2. do nothing")
             print("3. flee")
-            print("> ", end=' ')
+            print("(1-3) > ", end=' ')
             keyinput = int(input())
             if keyinput == 1:
                 wizard.attack(enemy)
@@ -37,7 +37,7 @@ class Battle(object):
                 continue
             enemy.attack(wizard)
         if wizard.alive():
-            print("You defeated the {}".format(enemy.name))
+            print("You defeated the {}!".format(enemy.name))
             return True
         else:
             print("You lost the battle!")

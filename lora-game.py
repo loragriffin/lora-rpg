@@ -22,6 +22,9 @@ if __name__ == "__main__":
         if not wizard_won:
             print("YOU LOSE!")
             exit(0)
-        shopping_engine.do_shopping(wizard)
+        elif wizard.coins > 0:
+            shopping_engine.do_shopping(wizard)
+        else:
+            break
 
     print("YOU WIN!")

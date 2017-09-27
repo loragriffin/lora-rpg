@@ -22,12 +22,17 @@ class Store(object):
             print("What do you want to do?")
             for i in range(len(Store.items)):
                 item = Store.items[i]
-                print("{}. buy {} ({})".format(i + 1, item.name, item.cost))
-            print("10. leave")
-            answer = int(input("> "))
-            if answer == 10:
+                print("{}. buy {} (${}), {}".format(i + 1, item.name, item.cost, item.power))
+            print("3. leave")
+            answer = int(input("(1-3) > "))
+            if answer == 3:
                 break
-            else:
+            elif wizard.coins > 0:
                 ItemToBuy = Store.items[answer - 1]
                 item = ItemToBuy()
                 wizard.buy(item)
+            elif wizard.coins <= 0:
+                print('You don\'t have enough coins to purchase anything.')
+                leave = input('Would you like to leave the store? (y/n) > ').lower()
+                if leave == 'y':
+                    break
